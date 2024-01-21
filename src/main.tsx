@@ -3,6 +3,7 @@ import { RouterProvider, Router } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
 import { ClerkProvider, useAuth } from '@clerk/clerk-react';
 import { env } from 'env';
+import { dark } from '@clerk/themes';
 
 // Set up a Router instance
 const router = new Router({
@@ -22,7 +23,7 @@ const rootElement = document.getElementById('root')!;
 
 function Provider() {
   return (
-    <ClerkProvider publishableKey={env.VITE_CLERK_PUBLISHABLE_KEY}>
+    <ClerkProvider appearance={{ baseTheme: dark }} publishableKey={env.VITE_CLERK_PUBLISHABLE_KEY}>
       <Consumer />
     </ClerkProvider>
   );

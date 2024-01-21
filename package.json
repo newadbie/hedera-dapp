@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^4.30.3",
+    "@clerk/themes": "^1.7.9",
     "@t3-oss/env-core": "^0.7.3",
     "@tanstack/react-router": "^1.8.3",
     "@tanstack/router-cli": "^1.8.2",

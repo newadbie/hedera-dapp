@@ -1,3 +1,4 @@
+import { UserButton, useAuth } from '@clerk/clerk-react';
 import { FileRoute, redirect } from '@tanstack/react-router';
 
 export const Route = new FileRoute('/dashboard').createRoute({
@@ -10,9 +11,12 @@ export const Route = new FileRoute('/dashboard').createRoute({
 });
 
 function Dashboard() {
+  const auth = useAuth();
   return (
     <div>
+      <UserButton afterSignOutUrl="/sign-in" />
       <h3>Welcome Home!</h3>
+      <pre>{JSON.stringify(auth, null, 2)}</pre>
     </div>
   );
 }
