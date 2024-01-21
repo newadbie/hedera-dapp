@@ -1,8 +1,9 @@
-import { Outlet, RootRoute } from '@tanstack/react-router';
+import { Outlet, rootRouteWithContext } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import '../styles/global.css';
+import { useAuth } from '@clerk/clerk-react';
 
-export const Route = new RootRoute({
+export const Route = rootRouteWithContext<{ auth: ReturnType<typeof useAuth> }>()({
   component: RootComponent,
 });
 
