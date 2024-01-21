@@ -4,7 +4,7 @@ export const Route = new FileRoute('/dashboard').createRoute({
   component: Dashboard,
   beforeLoad({ context }) {
     if (!context.auth.isSignedIn) {
-      throw redirect({ to: '/login' });
+      throw redirect({ to: '/sign-in' });
     }
   },
 });

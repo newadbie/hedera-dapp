@@ -1,6 +1,7 @@
+import { SignUp } from '@clerk/clerk-react';
 import { FileRoute, redirect } from '@tanstack/react-router';
 
-export const Route = new FileRoute('/login').createRoute({
+export const Route = new FileRoute('/sign-in').createRoute({
   component: Login,
   beforeLoad({ context }) {
     if (context.auth.isSignedIn) {
@@ -10,9 +11,5 @@ export const Route = new FileRoute('/login').createRoute({
 });
 
 function Login() {
-  return (
-    <div className="p-2">
-      <h3>Welcome Home!</h3>
-    </div>
-  );
+  return <SignUp />;
 }

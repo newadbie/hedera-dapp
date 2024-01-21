@@ -1,7 +1,12 @@
-import { FileRoute } from '@tanstack/react-router';
+import { FileRoute, redirect } from '@tanstack/react-router';
 
 export const Route = new FileRoute('/').createRoute({
   component: Home,
+  beforeLoad: ({ context }) => {
+    throw redirect({
+      to: context.auth.isSignedIn ? '/dashboard' : '/sign-in',
+    });
+  },
 });
 
 function Home() {
